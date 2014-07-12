@@ -4,6 +4,14 @@ var container;
 //creating array container
 var array = [];
 
+//measurepoint for the scrollposition
+var measurepoint = 7;
+
+//getting vertical scrollpositon
+var bodyScrollTop = $(".wrapper");
+var scrollPos = bodyScrollTop.scrollTop;
+
+
 //populating the array
 for (var i = 0; i < 3000; i++) {
 	//filling the array
@@ -37,4 +45,5 @@ var populateContainer = function () {
 }
 
 
+console.log(scrollPos);
 
