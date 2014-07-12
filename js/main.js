@@ -11,3 +11,10 @@ $(document).ready(function(){
 	}
 });
 
+$(function() {
+	//offset
+	var fIOFS = 0; // firstItemOffsetFromStart
+	// Will need to be updated when children changes from dataview
+	var cChildren = $(".container").children();
+
+});
