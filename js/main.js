@@ -8,8 +8,7 @@ var array = [];
 var measurepoint = 7;
 
 //getting vertical scrollpositon
-var bodyScrollTop = $(".wrapper");
-var scrollPos = bodyScrollTop.scrollTop;
+var scrollPos = $('body,html').scrollTop();
 
 
 //populating the array
@@ -46,4 +45,3 @@ var populateContainer = function () {
 
 
 console.log(scrollPos);
-
