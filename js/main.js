@@ -1,16 +1,40 @@
+//creating a container 
+var container;
+
 //creating array container
 var array = [];
 
 //populating the array
 for (var i = 0; i < 3000; i++) {
-	array = i;
-	//console.log(array);
+	//filling the array
+	array.push(i);
 }
 
-//displaying 15 elements
-for (var i=0; i<15; i++) {
-	var elements = array[i];
-	console.log(elements);
+//console.log(array);
+
+//running the function when document is loaded
+document.onreadystatechange = function () {
+	if (document.readyState == "complete") {
+	   container = document.getElementsByClassName('numbers');
+	   populateContainer();
+	}
 }
+
+
+var populateContainer = function () {
+	
+	//displaying 15 elements
+	for (var i = 0; i < 15; i++) {
+
+	//writing the 15 elements to the DOM	
+        var tmpDOM = document.createElement("li");
+        var t = document.createTextNode(i);
+        tmpDOM.appendChild(t);
+        tmpDOM.className = 'numELEM';
+
+        container[0].appendChild(tmpDOM);
+	}
+}
+
 
 
