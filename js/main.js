@@ -1,7 +1,10 @@
 var top = document.scrollTop;
 var width = window.innerWidth;
 var height = window.innerHeight;
-var boundingRect = elem.getBoundingClientRect();
+//var boundingRect = elem.getBoundingClientRect();
+
+
+var elements = [];
 
 
 $(document).ready(function(){
