@@ -1,4 +1,4 @@
-div.container { height:250px; 
+div#container { height:250px; 
 		width:15%; 
 		overflow: scroll; 
 		overflow-y: scroll; 
@@ -8,7 +8,7 @@ div.container { height:250px;
 		font-size: 20pt;	
 		font-family: "Courier New", Courier, mono;}
 
-.numbers { list-style-type: none; }
+ul.numbers { list-style-type: none; }
 
 ::-webkit-scrollbar {
            width: 12px;

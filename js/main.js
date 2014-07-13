@@ -12,7 +12,7 @@ var scrollPos = $('.container').scrollTop();
 */
 
 //initiaiting scrollvalue as measurepoint
-var old_scroll_top = 10;
+var old_scroll_top = 100;
 
 //populating the array
 for (var i = 0; i < 3000; i++) {
@@ -25,10 +25,11 @@ for (var i = 0; i < 3000; i++) {
 //running the function when document is loaded
 document.onreadystatechange = function () {
 	if (document.readyState == "complete") {
-	   container = document.getElementsByClassName('numbers');
-	   populateContainer();
-	   scrolling();
-	}
+		container = $("#container");
+		container.scroll(scrolling);
+		populateContainer();
+		scrolling();
+		}
 }
 
 $(document).scroll(scrolling);
@@ -53,18 +54,23 @@ var populateContainer = function () {
 function scrolling () {
 	console.log("Scrolling");
 	//getting current scroll position
-	var current_scroll_top = $(document).scrollTop();
+	var current_scroll_top = container.scrollTop();
 	//getting scroll delta
 	var scroll_delta = current_scroll_top - old_scroll_top;
 	old_scroll_top = current_scroll_top;
 
 	//always being able to scroll
-	if ((10 > old_scroll_top) || (old_scroll_top > 200)) {
-	old_scroll_top = 20;
-	$(document).scrollTop(20);
-   }
-	if (scroll_delta > -19) {
-		
+	if ((100 > old_scroll_top) || (old_scroll_top > 200)) {
+	old_scroll_top = 10;
+	$(document).scrollTop(10);
+	}
+	
+	
+	if (scroll_delta < 50) {
+	
+	
+	} else if (scroll_delta > 190) {
+	
 	}
 
 	console.log(current_scroll_top);
