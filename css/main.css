@@ -1,2 +1,17 @@
-.container { positon:fixed; top:200px; left:350px; height:400px; width:40%; overflow: hidden; overflow-y: scroll }
+div.container { height:250px; 
+		width:40%; 
+		overflow: scroll; 
+		overflow-y: scroll; 
+		position:absolute; 
+		left:570px; 
+		top:62px;
+		font: 20pt;	
+		font-family: "Courier New", Courier, mono;}
+
+.numbers { list-style-type: none; }
+
+::-webkit-scrollbar {
+	    width: 12px;
+    }
+     
 
