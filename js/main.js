@@ -12,7 +12,7 @@ var scrollPos = $('.container').scrollTop();
 */
 
 //initiaiting scrollvalue as measurepoint
-var old_scroll_top = 0;
+var old_scroll_top = 10;
 
 //populating the array
 for (var i = 0; i < 3000; i++) {
@@ -59,11 +59,14 @@ function scrolling () {
 	old_scroll_top = current_scroll_top;
 
 	//always being able to scroll
-	if ((10 > old_scroll_top) || (old_scroll_top > 90)) {
-	old_scroll_top = 0;
-	$(document).scrollTop(0);
+	if ((10 > old_scroll_top) || (old_scroll_top > 200)) {
+	old_scroll_top = 20;
+	$(document).scrollTop(20);
    }
+	if (scroll_delta > -19) {
+		
+	}
 
 	console.log(current_scroll_top);
-	console.log(scroll_delta);
+	console.log("delta " + scroll_delta);
 }
