@@ -1,1 +1,2 @@
-.container{ }
+.container { positon:fixed; top:200px; left:350px; height:400px; width:40%; overflow: hidden; overflow-y: scroll }
+
