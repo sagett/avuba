@@ -7,9 +7,8 @@ var array = [];
 //measurepoint for the scrollposition
 var measurepoint = 7;
 
-/* getting vertical scrollpositon
-var scrollPos = $('.container').scrollTop();
-*/
+// the first id of the current first element in the list
+var current = 0;
 
 //initiaiting scrollvalue as measurepoint
 var old_scroll_top = 100;
@@ -20,7 +19,6 @@ for (var i = 0; i < 3000; i++) {
 	array.push(i);
 }
 
-//console.log(array);
 
 //running the function when document is loaded
 document.onreadystatechange = function () {
@@ -35,12 +33,12 @@ document.onreadystatechange = function () {
 $(document).scroll(scrolling);
 
 
+
+
 var populateContainer = function () {
 	
-	//displaying 15 elements
-	for (var i = 0; i < 15; i++) {
-
-	//writing the 15 elements to the DOM	
+	//writing 15 elements to the DOM
+	for (var i = current; i < current + 10; i++) {	
         var tmpDOM = document.createElement("li");
         var t = document.createTextNode(i);
         tmpDOM.appendChild(t);
@@ -66,13 +64,25 @@ function scrolling () {
 	}
 	
 	
-	if (scroll_delta < 50) {
+	if (scroll_delta <= -10) {
+		//goback();
 	
-	
-	} else if (scroll_delta > 190) {
+	} else if (scroll_delta >= 83 ) {
+		advance();
 	
 	}
 
 	console.log(current_scroll_top);
 	console.log("delta " + scroll_delta);
 }
+
+
+ function advance(){
+	            current++;
+	            populateContainer();
+}
+
+ function goback(){
+ 				current--;
+ 				populateContainer();
+ }  
